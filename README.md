@@ -18,6 +18,9 @@ in /server/config/config.js
 app.secret - your secret key to crypt token
 oauth.telegram.botToken - token of your bot
 
+in /server/controllers/edit.js 
+33 string - change username
+
     npm i
     node app
 
@@ -41,6 +44,9 @@ https://core.telegram.org/widgets/login
 в /server/config/config.js
 app.secret - секретный ключ для шифрования токена
 oauth.telegram.botToken - токен бота
+
+в /server/controllers/edit.js 
+33 строчка меняем username на свой
 
     npm i
     node app
