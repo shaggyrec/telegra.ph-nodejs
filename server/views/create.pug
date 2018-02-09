@@ -1,0 +1,57 @@
+extends layout.pug
+
+block content
+    #container
+        .tl_page_wrap
+            .tl_page
+                main(class="tl_article")
+                    header(class="tl_article_header")
+                        h1(dir="auto")
+                            address(dir="auto")
+                                a(rel="author")
+                                time(datetime="")
+
+
+                    article(id="_tl_editor", class="tl_article_content")
+                        h1
+                            br
+                        address
+                            br
+                        p
+                            br
+                    div(id="_tl_link_tooltip", class="tl_link_tooltip")
+                    div(id="_tl_tooltip", class="tl_tooltip")
+                        .buttons
+                            span(class="button_hover")
+                            span(class="button_group")
+                                button(id="_bold_button")
+                                button(id="_italic_button")
+                                button(id="_link_button")
+                            span(class="button_group")
+                                button(id="_header_button")
+                                button(id="_subheader_button")
+                                button(id="_quote_button")
+                    //.prompt
+                    //	span(class="close")
+                    //		.prompt_input_wrap
+                    //			input(type="url", class="prompt_input")
+                    div(id="_tl_blocks", class="tl_blocks")
+                        .buttons
+                            button(id="_image_button")
+                            button(id="_embed_button")
+                    aside(class="tl_article_buttons")
+                        div(class="account account_top")
+                        button(id="_edit_button" class="button edit_button") Edit
+                        button(id="_publish_button", class="button publish_button") Publish
+                        div(class="account account_bottom")
+                    div(id="_error_msg", class="error_msg")
+            div(id="_tl_alerts", class="tl_alerts")
+block script
+    if user
+        script(type = 'text/javascript', src = '/js/cm.js')
+        script(type = 'text/javascript', src = '/js/jquery.min.js')
+        script(type = 'text/javascript', src = '/js/jquery.selection.min.js')
+        script(type = 'text/javascript', src = '/js/autosize.min.js')
+        script(type = 'text/javascript', src = '/js/load-image.all.min.js')
+        script(type = 'text/javascript', src = '/js/quill.min.js')
+        script(type = 'text/javascript', src = '/js/core.min.js')

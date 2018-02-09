@@ -1,0 +1,60 @@
+extends layout.pug
+
+block content
+    #container
+        .tl_page_wrap
+            .tl_page
+                main(class="tl_article")
+                    header(class="tl_article_header")
+                        h1(dir="auto")= post.title
+                        address(dir="auto")
+                            a(rel="author", href=post.author_url, target="_blank")= post.author
+                            time(datetime=post.created)= post.created
+                    article(id="_tl_editor", class="tl_article_content", contenteditable="false")
+                        h1= post.title
+                            br
+                        address
+                            a(href=post.author_url, target="_blank")= post.author
+                            br
+                        .
+                            !{post.content}
+                    div(id="_tl_link_tooltip", class="tl_link_tooltip")
+                    div(id="_tl_tooltip", class="tl_tooltip")
+                        .buttons
+                            span(class="button_hover")
+                            span(class="button_group")
+                                button(id="_bold_button")
+                                button(id="_italic_button")
+                                button(id="_link_button")
+                            span(class="button_group")
+                                button(id="_header_button")
+                                button(id="_subheader_button")
+                                button(id="_quote_button")
+                        //div(class="prompt")
+                        //    span(class="close")
+                        //    .prompt_input_wrap
+                        //        input(type="url", class="prompt_input")
+                    div(id="_tl_blocks", class="tl_blocks")
+                        .buttons
+                            button(id="_image_button")
+                            button(id="_embed_button")
+                    aside(class="tl_article_buttons")
+                        div(class="account account_top")
+                        button(id="_edit_button", class="button edit_button") Edit
+                        button(id="_publish_button", class="button publish_button") Publish
+                        div(class="account account_bottom")
+                        div(id="_error_msg", class="error_msg")
+        div(id="_tl_alerts", class="tl_alerts")
+block script
+    if user
+        script.
+            var T={"apiUrl":"\/edit","datetime":#{post.created},"pageId":"#{post._id}"};(function(){var b=document.querySelector('time');if(b&&T.datetime){var a=new Date(1E3*T.datetime),d='January February March April May June July August September October November December'.split(' ')[a.getMonth()],c=a.getDate();b.innerText=d+' '+(10>c?'0':'')+c+', '+a.getFullYear()}})();
+        script(type = 'text/javascript', src = '/js/jquery.min.js')
+        script(type = 'text/javascript', src = '/js/jquery.selection.min.js')
+        script(type = 'text/javascript', src = '/js/autosize.min.js')
+        script(type = 'text/javascript', src = '/js/load-image.all.min.js')
+        script(type = 'text/javascript', src = '/js/quill.min.js')
+        script(type = 'text/javascript', src = '/js/core.min.js')
+    else
+        script(type = 'text/javascript', src = '/js/jquery.min.js')
+        script(type = 'text/javascript', src = '/js/auth.js')

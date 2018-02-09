@@ -1,0 +1,1 @@
+var T={"apiUrl":"\/edit","datetime":1516288171,"pageId":"ab5c77b7679cbe6c69064"};(function(){var b=document.querySelector('time');if(b&&T.datetime){var a=new Date(1E3*T.datetime),d='January February March April May June July August September October November December'.split(' ')[a.getMonth()],c=a.getDate();b.innerText=d+' '+(10>c?'0':'')+c+', '+a.getFullYear()}})();

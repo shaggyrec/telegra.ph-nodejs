@@ -1,0 +1,14 @@
+extends layout.pug
+
+block content
+    #container
+        .container
+            h1 Статьи о программировании
+            ul
+                each item in posts
+                    li
+                        a(href='/'+item.path) #{item.title}
+block script
+    if !user
+        script(type = 'text/javascript', src = '/js/jquery.min.js')
+        script(type = 'text/javascript', src = '/js/auth.js')

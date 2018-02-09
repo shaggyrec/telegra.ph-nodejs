@@ -1,0 +1,32 @@
+{
+  "name": "telegra.ph-nodejs",
+  "license": "MIT",
+  "description": "NodeJS realisation of Telegra.ph by Telegram",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shaggyrec/"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "author": {
+    "name": "ShaGGy",
+    "url": "http://shagg.ru/"
+  },
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "jsonwebtoken": "^8.1.1",
+    "koa": "^2.2.0",
+    "koa-better-body": "^3.0.2",
+    "koa-convert": "^1.2.0",
+    "koa-pug": "^3.0.0-2",
+    "koa-router": "^7.1.1",
+    "koa-static": "^3.0.0",
+    "koa-views": "^6.0.2",
+    "koa2-cors": "^2.0.5",
+    "md5": "^2.2.1",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.33",
+    "string": "^3.3.3"
+  }
+}
